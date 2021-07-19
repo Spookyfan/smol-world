@@ -5,3 +5,8 @@ img {
 .grayscale {
     filter: grayscale(80%);
 }
+
+label {
+    font-size: larger;
+    font-weight: bold;
+}
