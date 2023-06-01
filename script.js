@@ -17,7 +17,7 @@ fetch("https://db.ygoprodeck.com/api/v7/cardinfo.php?id=89558743")
         document.getElementById("small-world").innerText = data.data[0].desc
     });
 
-getImage(imageId) {
+let getImage = (imageId) => {
     return 'https://images.ygoprodeck.com/images/cards_small/' + imageId + '.jpg';
 }
 
