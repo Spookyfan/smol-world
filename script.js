@@ -17,6 +17,9 @@ fetch("https://db.ygoprodeck.com/api/v7/cardinfo.php?id=89558743")
         document.getElementById("small-world").innerText = data.data[0].desc
     });
 
+getImage(imageId) {
+    return 'https://images.ygoprodeck.com/images/cards_small/' + imageId + '.jpg';
+}
 
 // on change event listener of ydk upload
 document.getElementById('ydk-upload').addEventListener('change', async function () {
@@ -57,7 +60,7 @@ document.getElementById('ydk-upload').addEventListener('change', async function 
         // load card images
         for (let i = 0; i < decklist_data.length; i++) {
             let img = document.createElement('img');
-            img.src = 'https://storage.googleapis.com/ygoprodeck.com/pics_small/' + decklist_data[i].id + '.jpg';
+            img.src = getImage(decklist_data[i].id);
             outputAllMonsterWrapper.appendChild(img);
         }
 
@@ -161,7 +164,7 @@ let search = () => {
 
         // append img
         let img_search = document.createElement('img');
-        img_search.src = 'https://storage.googleapis.com/ygoprodeck.com/pics_small/' + searchedCard.id + '.jpg';
+        img_search.src = getImage(searchedCard.id);
         searchOutput.appendChild(img_search);
 
 
@@ -182,7 +185,7 @@ let search = () => {
 
     cardsHand.forEach(element => {
         let img_hand = document.createElement('img');
-        img_hand.src = 'https://images.ygoprodeck.com/images/cards_small/' + element.id + '.jpg';
+        img_hand.src = getImage(element.id);
         img_hand.classList.add("grayscale");
         handOutput.appendChild(img_hand);
 
@@ -216,7 +219,7 @@ let search = () => {
 
             cardsDeck.forEach(element => {
                 let img_deck = document.createElement('img');
-                img_deck.src = 'https://storage.googleapis.com/ygoprodeck.com/pics_small/' + element.id + '.jpg';
+                img_deck.src = getImage(element.id);
                 deckOutput.appendChild(img_deck);
             })
         }
