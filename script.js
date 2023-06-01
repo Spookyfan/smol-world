@@ -182,7 +182,7 @@ let search = () => {
 
     cardsHand.forEach(element => {
         let img_hand = document.createElement('img');
-        img_hand.src = 'https://storage.googleapis.com/ygoprodeck.com/pics_small/' + element.id + '.jpg';
+        img_hand.src = 'https://images.ygoprodeck.com/images/cards_small/' + element.id + '.jpg';
         img_hand.classList.add("grayscale");
         handOutput.appendChild(img_hand);
 
